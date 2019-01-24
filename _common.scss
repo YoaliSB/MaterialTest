@@ -1,0 +1,13 @@
+$mdc-theme-primary: #e60000;
+$mdc-theme-secondary: #76ff03;
+$mdc-theme-background: #fff;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+}
