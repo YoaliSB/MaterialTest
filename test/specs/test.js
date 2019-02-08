@@ -1,5 +1,55 @@
 var assert = require("assert");
+/*PRUEBAS DE CSS*/
+describe('Checar font de login',()=>{
+    before(function(){
+        console.log("INICIO DE TEST FONT");
+    });
+    it('Ver font del boton',()=>{
+        browser.url("/");
+        var boton = $('#button-submit');
+        var font = boton.getCSSProperty('font-family');
+        console.log("FONT: " + font.value);
+        assert.equal(font.value, "roboto")
+    });
+    after(function(){
+        console.log("TERMINADO FONT");
+    });
+});
+describe('Checar tamaño de imagen de header',()=>{
+    before(function(){
+        console.log("INICIO DE TEST IMG");
+    });
+    it('Ver tamaño de image header',()=>{
+        browser.url("/");
+        var headerimg = $('#PokestopLogo');
+        var width = headerimg.getCSSProperty('width');
+        var height = headerimg.getCSSProperty('height');
+        
+        assert.equal((width.value=="120px" && height.value == "120px"), true)
+    });
+    after(function(){
+        console.log("TERMINADO IMG");
+    });
+});
+describe('Checar tamaño de font de inputs',()=>{
+    before(function(){
+        console.log("INICIO DE TEST font size");
+    });
+    it('Ver tamaño de image header',()=>{
+        browser.url("/");
+        var user = $('#username-input');
+        var password = $('#password-input');
+        var userFS = user.getCSSProperty('font-size');
+        var passwordFS = password.getCSSProperty('font-size');
+        
+        assert.equal((userFS.value=="16px" && passwordFS.value == "16px"), true)
+    });
+    after(function(){
+        console.log("TERMINADO FONT SIZE");
+    });
+});
 
+/*PRUEBAS DE HTML*/
 describe('Tarea 2', () => {
     it('encontrar el título de la página', () => {
         browser.url('/');
@@ -10,36 +60,25 @@ describe('Tarea 2', () => {
 
 describe('Buscar elemento', () =>{
     before(function(){
-        console.log("INICIO DE TEST");
+        console.log("INICIO DE TEST Buscar");
     });
    it('Saber si existe el botón de cancelar', ()=>{
        browser.url('/');
-       var isPresent = driver.findElement(By.id("cancel-button")).isDisplayed();
-       assertTrue(isPresent);
+       var isPresent = false;
+       console.log(isPresent)
+       if($('#cancel-button')!= ""){
+        isPresent = true;
+       }
+       assert(isPresent);
    });
     after(function(){
-        console.log("TERMINANDO")
+        console.log("TERMINANDO TEST Buscar")
     });
 });
-/*describe('CSS something', () => {
-    before(function(){
-        console.log("INICIO DE CSS PROPERTY");
-    });
-    it('ver color de input text',()=>{
-        browser.url("/");
-        var username = $('#username-input');
-        var color = username.getCSSProperty('border-bottom-color');
-        console.log("COLOR: " + color.value);
-        assert.equal(color.value, "rgba(255,255,255,0.42)")
-    });
-    after(function(){
-        console.log("TERMINANDO CSS")
-    });
-});*/
 
 describe('Insertar info en login', () => {
     before(function(){
-        console.log("INICIO DE TEST");
+        console.log("INICIO DE TEST login");
     });
     it('debe ser login exitoso',() => {
         browser.url('/');
@@ -56,6 +95,6 @@ describe('Insertar info en login', () => {
 
     });
     after(function(){
-        console.log("TERMINANDO")
+        console.log("TERMINANDO login")
     });
 });
