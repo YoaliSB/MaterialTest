@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shrine (MDC Web Example App)</title>
+  <title>Tarea 2</title>
   <link rel="shortcut icon" href="https://material.io/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
@@ -12,7 +12,7 @@
 <body class="shrine-login">
   <section class="header">
     <img class="shrine-logo" version="1.1" src="../assets/pokemon-go.svg"
-       width="40px" height="40px">
+       width="40px" height="40px" id="PokestopLogo">
     <h1>POKÉSTOP</h1>
   </section>
 
@@ -28,10 +28,10 @@
       <div class="mdc-line-ripple"></div>
     </div>
     <div class="button-container">
-      <button type="button" class="mdc-button cancel">
+      <button type="button" class="mdc-button cancel" id="cancel-button">
         Cancel
       </button>
-      <button class="mdc-button mdc-button--raised next">
+      <button class="mdc-button mdc-button--raised next" id="button-submit">
         Next
       </button>
     </div>

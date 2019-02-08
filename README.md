@@ -1,6 +1,6 @@
 # MaterialTest
 
-Tarea 1 para Laboratorio de Desarrollo de Aplicaciones Web
+Tarea 2 para Laboratorio de Desarrollo de Aplicaciones Web
 
 - Ana Karen Campos García	A01335037
 - Dafne Lecona Cisneros		A01334365
